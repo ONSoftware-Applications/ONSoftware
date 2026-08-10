@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Visual Studio workspace files (not part of the website repo)
+.vs/
+ONSoftware.slnx
+
+# Planning reference (kept locally, not part of the website repo)
+SellerHQ-Product-Overview.md
