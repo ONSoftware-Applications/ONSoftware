@@ -223,9 +223,12 @@ function Footer() {
             © {COMPANY_YEAR} {SITE_NAME}. All rights reserved.
           </span>
           <span className="ons-footer__badge">
-            <span className="ons-brand__mark" style={{ width: '18px', height: '18px', fontSize: '0.6rem' }}>
-              O
-            </span>
+            <img
+              className="ons-brand__mark"
+              style={{ width: '18px', height: '18px' }}
+              src="/logo.svg"
+              alt=""
+            />
             <span>
               <strong>SellerHQ</strong> by ONSoftware
             </span>

@@ -8,9 +8,7 @@ export default function BrandMark({ inverted = false }: BrandMarkProps) {
       className={inverted ? 'ons-brand ons-brand--inverted' : 'ons-brand'}
       aria-label="ONSoftware"
     >
-      <span className="ons-brand__mark" aria-hidden="true">
-        O
-      </span>
+      <img className="ons-brand__mark" src="/logo.svg" alt="" />
       <span>ONSoftware</span>
     </span>
   )
