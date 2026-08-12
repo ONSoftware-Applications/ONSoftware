@@ -65,7 +65,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         heading: 'Contact',
         paragraphs: [
-          'Questions about this policy can be sent to hello@onsoftware.uk.',
+          'Questions about this policy can be sent to adminonsoftware@gmail.com.',
         ],
       },
     ],
@@ -140,7 +140,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         heading: '11. Contact',
         paragraphs: [
-          'Questions about these Terms can be sent to hello@onsoftware.uk.',
+          'Questions about these Terms can be sent to adminonsoftware@gmail.com.',
         ],
       },
     ],
@@ -178,7 +178,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         heading: 'Contact',
         paragraphs: [
-          'Questions about this policy can be sent to hello@onsoftware.uk.',
+          'Questions about this policy can be sent to adminonsoftware@gmail.com.',
         ],
       },
     ],
@@ -213,7 +213,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         heading: 'Reporting a concern',
         paragraphs: [
-          'If you see content or behaviour that you believe breaches this policy, please contact us at support@onsoftware.uk.',
+          'If you see content or behaviour that you believe breaches this policy, please contact us at adminonsoftware@gmail.com.',
         ],
       },
     ],
@@ -240,7 +240,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         heading: 'How to request a refund',
         paragraphs: [
-          'Email us at support@onsoftware.uk with your account email and the reason for the request. We aim to respond within a few working days.',
+          'Email us at adminonsoftware@gmail.com with your account email and the reason for the request. We aim to respond within a few working days.',
         ],
       },
       {
@@ -273,7 +273,7 @@ export const LEGAL_PAGES: LegalPage[] = [
       {
         heading: 'Feedback',
         paragraphs: [
-          'If you find anything difficult to use, or have suggestions for improvement, please email us at support@onsoftware.uk. We treat accessibility feedback as a priority.',
+          'If you find anything difficult to use, or have suggestions for improvement, please email us at adminonsoftware@gmail.com. We treat accessibility feedback as a priority.',
         ],
       },
     ],

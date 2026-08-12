@@ -23,6 +23,9 @@ function ThemeToggle() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     localStorage.setItem('ons-theme', theme)
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#0b1120' : '#ffffff')
   }, [theme])
 
   return (

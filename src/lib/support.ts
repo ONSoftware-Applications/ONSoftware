@@ -1,9 +1,10 @@
-import { APP_URL, SUPPORT_URL } from './site'
+import type { IconName } from '../components/Icon'
+import { APP_URL } from './site'
 
 export type HelpCategory = {
   id: string
   label: string
-  icon: string
+  icon: IconName
   topics: string[]
 }
 
@@ -11,7 +12,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'getting-started',
     label: 'Getting started',
-    icon: '🚀',
+    icon: 'rocket',
     topics: [
       'Creating your SellerHQ account',
       'Setting up your first business',
@@ -23,7 +24,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'account',
     label: 'Account',
-    icon: '👤',
+    icon: 'user',
     topics: [
       'Managing your profile',
       'Changing your password',
@@ -35,7 +36,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'businesses',
     label: 'Businesses',
-    icon: '🏪',
+    icon: 'store',
     topics: [
       'Creating multiple businesses',
       'Business settings',
@@ -47,7 +48,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'inventory',
     label: 'Inventory',
-    icon: '📦',
+    icon: 'box',
     topics: [
       'Product statuses explained',
       'Photographing products',
@@ -59,7 +60,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'listings',
     label: 'Listings',
-    icon: '🏷️',
+    icon: 'tag',
     topics: [
       'Tracking marketplace listings',
       'Auto-relist',
@@ -69,7 +70,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'sales',
     label: 'Sales',
-    icon: '💷',
+    icon: 'money',
     topics: [
       'Recording a sale',
       'Quick listings & bundle sales',
@@ -80,7 +81,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'expenses',
     label: 'Expenses',
-    icon: '🧾',
+    icon: 'receipt',
     topics: [
       'Adding an expense',
       'Expense categories',
@@ -91,7 +92,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'forecasts',
     label: 'Forecasts',
-    icon: '📈',
+    icon: 'chart',
     topics: [
       'Forecasting with your data',
       'Scenario planning',
@@ -101,7 +102,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'tax',
     label: 'Tax',
-    icon: '🧮',
+    icon: 'calculator',
     topics: [
       'How the UK tax estimate works',
       'Tax years & allowances',
@@ -112,7 +113,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'settings',
     label: 'Settings',
-    icon: '⚙️',
+    icon: 'settings',
     topics: [
       'Feature toggles',
       'Business defaults',
@@ -123,7 +124,7 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
   {
     id: 'troubleshooting',
     label: 'Troubleshooting',
-    icon: '🛠️',
+    icon: 'wrench',
     topics: [
       'Signed out unexpectedly',
       'Photos not uploading',
@@ -135,6 +136,5 @@ export const SELLERHQ_CATEGORIES: HelpCategory[] = [
 
 export const SUPPORT_LINKS = {
   inAppSupport: `${APP_URL}/support`,
-  email: 'support@onsoftware.uk',
-  futureCentre: SUPPORT_URL,
+  email: 'adminonsoftware@gmail.com',
 } as const

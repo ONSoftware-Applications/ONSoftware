@@ -14,6 +14,9 @@ const initialTheme =
       ? 'dark'
       : 'light'
 document.documentElement.dataset.theme = initialTheme
+document
+  .querySelector('meta[name="theme-color"]')
+  ?.setAttribute('content', initialTheme === 'dark' ? '#0b1120' : '#ffffff')
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

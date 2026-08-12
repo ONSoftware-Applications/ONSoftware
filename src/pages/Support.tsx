@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
+import Icon from '../components/Icon'
 import PageMeta, { pageTitle } from '../components/PageMeta'
-import { APP_URL, SUPPORT_URL } from '../lib/site'
-import { SELLERHQ_CATEGORIES } from '../lib/support'
+import { SELLERHQ_CATEGORIES, SUPPORT_LINKS } from '../lib/support'
 
 export default function Support() {
   const [query, setQuery] = useState('')
@@ -35,8 +35,8 @@ export default function Support() {
           </div>
 
           <div className="ons-search">
-            <span className="ons-search__icon" aria-hidden="true">
-              🔍
+            <span className="ons-search__icon">
+              <Icon name="search" size={18} />
             </span>
             <input
               type="search"
@@ -71,8 +71,8 @@ export default function Support() {
               {filtered.map((category) => (
                 <div className="ons-category" key={category.id}>
                   <h3 className="ons-category__title">
-                    <span className="ons-category__icon" aria-hidden="true">
-                      {category.icon}
+                    <span className="ons-category__icon">
+                      <Icon name={category.icon} size={20} />
                     </span>
                     {category.label}
                   </h3>
@@ -86,24 +86,23 @@ export default function Support() {
             </div>
           ) : (
             <div className="ons-support-notice" style={{ marginTop: '20px' }}>
-              <span aria-hidden="true">🔎</span>
+              <Icon name="search" size={20} />
               <p>
                 <strong>Nothing matched.</strong> Email{' '}
-                <a href="mailto:support@onsoftware.uk">support@onsoftware.uk</a>{' '}
+                <a href={`mailto:${SUPPORT_LINKS.email}`}>{SUPPORT_LINKS.email}</a>{' '}
                 and we’ll point you in the right direction.
               </p>
             </div>
           )}
 
           <div className="ons-support-notice" style={{ marginTop: '32px' }}>
-            <span aria-hidden="true">🚧</span>
+            <Icon name="alert" size={20} />
             <p>
               <strong>The full knowledge base is coming.</strong> This help
-              centre will move to{' '}
-              <a href={SUPPORT_URL}>support.onsoftware.uk</a> and expand as
+              centre will move to a dedicated support subdomain and expand as
               more ONSoftware products launch. For help right now, open{' '}
-              <a href={`${APP_URL}/support`}>in-app support</a> or email{' '}
-              <a href="mailto:support@onsoftware.uk">support@onsoftware.uk</a>.
+              <a href={SUPPORT_LINKS.inAppSupport}>in-app support</a> or email{' '}
+              <a href={`mailto:${SUPPORT_LINKS.email}`}>{SUPPORT_LINKS.email}</a>.
             </p>
           </div>
         </div>

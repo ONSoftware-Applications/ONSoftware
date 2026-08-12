@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom'
+import Icon from '../components/Icon'
 import PageMeta, { pageTitle } from '../components/PageMeta'
-import { CONTACT_EMAILS, SUPPORT_URL } from '../lib/site'
+import { CONTACT_EMAILS } from '../lib/site'
 
 const ROUTES = [
   {
@@ -7,28 +9,28 @@ const ROUTES = [
     title: 'General enquiries',
     text: 'Questions about ONSoftware, partnerships or anything else — start here.',
     email: CONTACT_EMAILS.general,
-    cta: 'Email hello@onsoftware.uk',
+    cta: 'Email adminonsoftware@gmail.com',
   },
   {
     label: 'Product support',
     title: 'Product support',
     text: 'Need help using a product or hit a problem? Our support team will get back to you.',
     email: CONTACT_EMAILS.support,
-    cta: 'Email support@onsoftware.uk',
+    cta: 'Email adminonsoftware@gmail.com',
   },
   {
     label: 'Business enquiries',
     title: 'Business enquiries',
     text: 'Working together, reseller programmes or media — let’s talk.',
     email: CONTACT_EMAILS.business,
-    cta: 'Email hello@onsoftware.uk',
+    cta: 'Email adminonsoftware@gmail.com',
   },
   {
     label: 'Feedback',
     title: 'Feedback',
     text: 'Tell us what works, what doesn’t and what you’d like to see next.',
     email: CONTACT_EMAILS.feedback,
-    cta: 'Email hello@onsoftware.uk',
+    cta: 'Email adminonsoftware@gmail.com',
   },
 ]
 
@@ -65,12 +67,12 @@ export default function Contact() {
           </div>
 
           <div className="ons-support-notice" style={{ marginTop: '28px' }}>
-            <span aria-hidden="true">ℹ️</span>
+            <Icon name="info" size={20} />
             <p>
               <strong>Already using a product?</strong> For the fastest help,
               open the in-app support page, or see the{' '}
-              <a href={`${SUPPORT_URL}`}>ONSoftware help centre</a> for guides
-              and troubleshooting.
+              <Link to="/support">help centre</Link> for guides and
+              troubleshooting.
             </p>
           </div>
         </div>

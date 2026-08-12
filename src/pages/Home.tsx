@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Icon from '../components/Icon'
 import PageMeta, { pageTitle } from '../components/PageMeta'
 import Cta from '../components/Cta'
 import ProductCard from '../components/ProductCard'
@@ -7,17 +8,17 @@ import { PRODUCTS } from '../lib/products'
 
 const APPROACH = [
   {
-    icon: '🔧',
+    icon: 'wrench' as const,
     title: 'Practical first',
     text: 'We build tools for real workflows — the kind of software you open every day because it actually saves you time.',
   },
   {
-    icon: '🎯',
+    icon: 'target' as const,
     title: 'Focused scope',
     text: 'Each application does one job properly instead of trying to be everything. Simple to learn, simple to use.',
   },
   {
-    icon: '🔒',
+    icon: 'lock' as const,
     title: 'Honest by design',
     text: 'Clear pricing, no dark patterns, and data that belongs to you. We earn trust by being straightforward.',
   },
@@ -142,7 +143,7 @@ export default function Home() {
             {APPROACH.map((item) => (
               <div className="ons-card" key={item.title}>
                 <div className="ons-card__icon" aria-hidden="true">
-                  {item.icon}
+                  <Icon name={item.icon} size={22} />
                 </div>
                 <h3 className="ons-card__title ons-h3">{item.title}</h3>
                 <p className="ons-card__text">{item.text}</p>

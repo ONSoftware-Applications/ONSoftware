@@ -12,12 +12,15 @@ export const APP_URL = 'https://sellerhq.onsoftware.uk'
 /** Future central support centre origin. */
 export const SUPPORT_URL = 'https://support.onsoftware.uk'
 
+/** Single inbox used for all contact routes. */
+export const CONTACT_EMAIL = 'adminonsoftware@gmail.com'
+
 /** Email addresses for the different contact routes. */
 export const CONTACT_EMAILS = {
-  general: 'hello@onsoftware.uk',
-  support: 'support@onsoftware.uk',
-  business: 'hello@onsoftware.uk',
-  feedback: 'hello@onsoftware.uk',
+  general: CONTACT_EMAIL,
+  support: CONTACT_EMAIL,
+  business: CONTACT_EMAIL,
+  feedback: CONTACT_EMAIL,
 } as const
 
 export const COMPANY_YEAR = 2026

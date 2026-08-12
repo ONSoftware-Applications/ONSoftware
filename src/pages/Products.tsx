@@ -1,3 +1,4 @@
+import Icon from '../components/Icon'
 import PageMeta, { pageTitle } from '../components/PageMeta'
 import Cta from '../components/Cta'
 import ProductCard from '../components/ProductCard'
@@ -41,7 +42,7 @@ export default function Products() {
       <section className="ons-section--tight ons-section--soft">
         <div className="ons-container">
           <div className="ons-support-notice">
-            <span aria-hidden="true">💡</span>
+            <Icon name="lightbulb" size={20} />
             <p>
               <strong>We show you everything we’re working on.</strong>{' '}
               Unreleased products appear here so you can see where ONSoftware
