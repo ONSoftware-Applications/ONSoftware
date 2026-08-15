@@ -39,11 +39,6 @@ export default function PricingTable() {
                   {feature}
                 </li>
               ))}
-              {plan.planned?.map((feature) => (
-                <li className="ons-plan__soon" key={feature}>
-                  {feature}
-                </li>
-              ))}
             </ul>
 
             <a

@@ -5,7 +5,6 @@ export type Plan = {
   monthlyPrice: number
   highlighted?: boolean
   available: string[]
-  planned?: string[]
 }
 
 export const ANNUAL_DISCOUNT = 0.05
@@ -87,12 +86,9 @@ export const PLANS: Plan[] = [
       'Full audit log',
       'Accounting export',
       'QR relay: send phone scans to a laptop',
+      'Till Mode: full point-of-sale with sessions, receipts & cash drawer',
+      'White-label branding (your name, logo & colour)',
       'Priority support',
-    ],
-    planned: [
-      'Marketplace API integrations',
-      'API & webhooks',
-      'White-label branding',
     ],
   },
 ]

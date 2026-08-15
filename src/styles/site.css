@@ -904,19 +904,6 @@ ol {
   font-weight: 800;
 }
 
-.ons-plan__soon {
-  display: flex;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: var(--ons-ink-faint);
-}
-
-.ons-plan__soon::before {
-  content: '◐';
-  flex-shrink: 0;
-  color: var(--ons-warning);
-}
-
 /* ── FAQ ─────────────────────────────────────────────────────── */
 .ons-faq {
   max-width: 720px;

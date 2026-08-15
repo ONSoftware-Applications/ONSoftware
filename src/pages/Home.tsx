@@ -57,7 +57,7 @@ export default function Home() {
                 <strong>1</strong> live product
               </span>
               <span>
-                <strong>{future.length}</strong> in development
+                <strong>Free</strong> to start
               </span>
               <span>
                 <strong>UK</strong> based

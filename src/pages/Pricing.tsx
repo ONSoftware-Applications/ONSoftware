@@ -17,6 +17,11 @@ const BILLING_FAQS = [
       'Yes — choosing annual billing saves you 5% compared to paying monthly.',
   },
   {
+    question: 'Are all the listed features available today?',
+    answer:
+      'Yes. SellerHQ is feature-complete — every feature shown on a plan ships with that plan. There are no “coming soon” placeholders.',
+  },
+  {
     question: 'What happens if I cancel?',
     answer:
       'Your plan stays active until the end of the current billing period. After that you drop to the free Basic plan, and your data is always safe.',

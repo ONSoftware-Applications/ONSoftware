@@ -34,6 +34,10 @@ const FEATURES = [
     text: 'Record single sales, quick listings and bundle sales, with fees, costs and profit per sale.',
   },
   {
+    title: 'Till Mode & point of sale',
+    text: 'A full point-of-sale with sessions, receipts and a cash drawer — built for markets, fairs and shop counters.',
+  },
+  {
     title: 'Listings & auto-relist',
     text: 'Keep an eye on your eBay, Vinted, Etsy and Depop listings, with auto-relist reminders.',
   },
@@ -50,12 +54,16 @@ const FEATURES = [
     text: 'Predict future performance, plan scenarios and export P&L and stock-ageing reports.',
   },
   {
-    title: 'UK tax estimate',
-    text: 'Income tax and Class 4 National Insurance estimates per tax year, from your actual data.',
+    title: 'UK tax',
+    text: 'Income tax and Class 4 National Insurance estimates, with quarterly deadlines and filing on Pro.',
   },
   {
     title: 'Photos, QR & barcodes',
-    text: 'Compressed product photos, printable labels, QR codes and a mobile scanner for stock checks.',
+    text: 'Compressed product photos, printable labels, QR codes, a mobile scanner and QR relay to send phone scans to a laptop.',
+  },
+  {
+    title: 'Team & white-label',
+    text: '5 team seats with roles and a full audit log, plus white-label branding with your own name, logo and colour.',
   },
 ]
 
@@ -121,7 +129,12 @@ const FAQS = [
   {
     question: 'Can I use it with my team?',
     answer:
-      'Yes. The Business plan includes 5 team seats with roles (owner, admin, member), invite codes and an audit log.',
+      'Yes. The Business plan includes 5 team seats with roles (owner, admin, member), invite codes, an audit log and white-label branding.',
+  },
+  {
+    question: 'What is Till Mode?',
+    answer:
+      'Till Mode is SellerHQ’s point of sale, available on the Business plan. It gives you selling sessions, printed-style receipts and a cash drawer, so you can sell in person at markets, fairs or a shop counter.',
   },
   {
     question: 'Is my data secure?',
@@ -159,7 +172,7 @@ export default function SellerHQ() {
             <div className="ons-hero__proof">
               <span className="ons-badge ons-badge--live">
                 <span className="ons-badge__dot" aria-hidden="true" />
-                Live
+                Feature complete
               </span>
               <span>
                 Free to start
@@ -234,6 +247,10 @@ export default function SellerHQ() {
               It’s built for independent businesses and individuals, not
               enterprises. No bloat, no features you’ll never open — just the
               tools you need to manage, organise and grow.
+            </p>
+            <p>
+              SellerHQ is feature-complete. Everything on the pricing page is
+              available today — there’s nothing hidden behind a “coming soon”.
             </p>
           </div>
         </div>

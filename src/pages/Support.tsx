@@ -98,11 +98,12 @@ export default function Support() {
           <div className="ons-support-notice" style={{ marginTop: '32px' }}>
             <Icon name="alert" size={20} />
             <p>
-              <strong>The full knowledge base is coming.</strong> This help
-              centre will move to a dedicated support subdomain and expand as
-              more ONSoftware products launch. For help right now, open{' '}
+              <strong>Can’t find an answer?</strong> Open{' '}
               <a href={SUPPORT_LINKS.inAppSupport}>in-app support</a> or email{' '}
-              <a href={`mailto:${SUPPORT_LINKS.email}`}>{SUPPORT_LINKS.email}</a>.
+              <a href={`mailto:${SUPPORT_LINKS.email}`}>{SUPPORT_LINKS.email}</a>{' '}
+              and we’ll help you directly. New guides are added regularly, and
+              this help centre will move to a dedicated support subdomain as
+              ONSoftware grows.
             </p>
           </div>
         </div>

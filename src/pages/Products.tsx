@@ -55,8 +55,8 @@ export default function Products() {
       <section className="ons-section">
         <div className="ons-container">
           <Cta
-            title="SellerHQ is live now"
-            text="The first ONSoftware application is ready. Manage inventory, sales, expenses and taxes in one place."
+            title="SellerHQ is finished and live"
+            text="The first ONSoftware application is feature-complete. Manage inventory, sales, expenses and taxes in one place — free to start."
           >
             <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>
               Get started free →
