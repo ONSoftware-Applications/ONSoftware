@@ -27,7 +27,7 @@ export default function PricingTable() {
 
             {plan.monthlyPrice !== 0 ? (
               <p className="ons-plan__annual">
-                {formatGbp(annual)}/mo billed annually ({Math.round(ANNUAL_DISCOUNT * 100)}% off)
+                {formatGbp(annual)} billed annually ({Math.round(ANNUAL_DISCOUNT * 100)}% off)
               </p>
             ) : (
               <p className="ons-plan__annual ons-plan__annual--zero">Free to start, upgrade anytime</p>
