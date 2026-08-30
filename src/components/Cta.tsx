@@ -9,9 +9,13 @@ type CtaProps = {
 export default function Cta({ title, text, children }: CtaProps) {
   return (
     <div className="ons-cta">
-      <h2>{title}</h2>
-      <p>{text}</p>
-      {children ? <div className="ons-cta__actions">{children}</div> : null}
+      <div className="ons-cta__content">
+        <div>
+          <h2 className="ons-cta__title ons-h2">{title}</h2>
+          <p className="ons-cta__text">{text}</p>
+        </div>
+        {children ? <div className="ons-cta__actions">{children}</div> : null}
+      </div>
     </div>
   )
 }

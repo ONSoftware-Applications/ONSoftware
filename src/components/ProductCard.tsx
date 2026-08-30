@@ -10,12 +10,10 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
   const isLive = product.status === 'live'
 
   return (
-    <article
-      className={featured ? 'ons-product ons-product--featured' : 'ons-product'}
-    >
+    <article className={featured ? 'ons-product ons-product--featured' : 'ons-product'}>
       <div className="ons-product__top">
         <span
-          className={`ons-product__logo${product.accentClass ?? ''}`}
+          className={`ons-product__logo ${product.accentClass ?? ''}`.trim()}
           aria-hidden="true"
         >
           {product.monogram}
@@ -23,30 +21,30 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
         {isLive ? (
           <span className="ons-badge ons-badge--live">
             <span className="ons-badge__dot" aria-hidden="true" />
-            Live
+            Live now
           </span>
         ) : (
-          <span className="ons-badge ons-badge--soon">In development</span>
+          <span className="ons-badge ons-badge--soon">Roadmap</span>
         )}
       </div>
 
       <h3 className="ons-product__title ons-h3">{product.name}</h3>
-      <p className="ons-product__tagline">{product.tagline}</p>
+      <p className="ons-product__tagline">{product.category}</p>
       <p className="ons-product__desc">{product.description}</p>
 
       <div className="ons-product__foot">
         {isLive ? (
-          <Link className="ons-btn ons-btn--primary ons-btn--sm" to={product.href}>
-            Open SellerHQ
-          </Link>
+          <>
+            <Link className="ons-btn ons-btn--primary ons-btn--sm" to={product.href}>
+              Explore {product.name}
+            </Link>
+            <Link to={product.href} className="ons-product__tagline">
+              Product details →
+            </Link>
+          </>
         ) : (
-          <span className="ons-product__soon">Coming soon</span>
+          <span className="ons-product__soon">Planned for the ONSoftware ecosystem</span>
         )}
-        {isLive ? (
-          <Link to={product.href} className="ons-product__tagline">
-            Learn more →
-          </Link>
-        ) : null}
       </div>
     </article>
   )

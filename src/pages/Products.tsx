@@ -1,4 +1,4 @@
-import Icon from '../components/Icon'
+import { Link } from 'react-router-dom'
 import PageMeta, { pageTitle } from '../components/PageMeta'
 import Cta from '../components/Cta'
 import ProductCard from '../components/ProductCard'
@@ -13,54 +13,65 @@ export default function Products() {
     <>
       <PageMeta
         title={pageTitle('Products')}
-        description="Browse ONSoftware applications. SellerHQ is live today, with more practical tools in development."
+        description="Explore the ONSoftware product suite: SellerHQ is live now, with focused business and admin tools on the roadmap."
       />
 
-      <section className="ons-section">
-        <div className="ons-container">
-          <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">Our products</p>
-            <h1 className="ons-h1">Software for real problems</h1>
-            <p className="ons-lead">
-              Every ONSoftware application is built to help you manage, organise
-              and grow. Start with what’s live today — and keep an eye on what’s
-              coming.
-            </p>
+      <section className="ons-hero">
+        <div className="ons-container" style={{ maxWidth: '930px' }}>
+          <p className="ons-eyebrow">Products</p>
+          <h1 className="ons-h1">A product family built around specific jobs.</h1>
+          <p className="ons-hero__lead">ONSoftware is not one giant platform. Each application gets a clear purpose, its own workflows and room to grow—while still belonging to one consistent ecosystem.</p>
+          <div className="ons-hero__cta">
+            <Link className="ons-btn ons-btn--primary ons-btn--lg" to="/products/sellerhq">Explore SellerHQ</Link>
+            <a className="ons-btn ons-btn--secondary ons-btn--lg" href={`${APP_URL}/login`}>Open live app</a>
           </div>
+        </div>
+      </section>
 
+      <section className="ons-section ons-section--soft">
+        <div className="ons-container">
+          <div className="ons-section-head">
+            <p className="ons-eyebrow">Available now</p>
+            <h2 className="ons-h2">Software you can use today.</h2>
+          </div>
           <div className="ons-products-grid">
-            {live.map((product) => (
-              <ProductCard key={product.slug} product={product} featured />
-            ))}
-            {future.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ons-section--tight ons-section--soft">
-        <div className="ons-container">
-          <div className="ons-support-notice">
-            <Icon name="lightbulb" size={20} />
-            <p>
-              <strong>We show you everything we’re working on.</strong>{' '}
-              Unreleased products appear here so you can see where ONSoftware
-              is heading — and so nothing gets lost while it’s being built.
-            </p>
+            {live.map((product) => <ProductCard key={product.slug} product={product} featured />)}
           </div>
         </div>
       </section>
 
       <section className="ons-section">
         <div className="ons-container">
-          <Cta
-            title="SellerHQ is finished and live"
-            text="The first ONSoftware application is feature-complete. Manage inventory, sales, expenses and taxes in one place — free to start."
-          >
-            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>
-              Get started free →
-            </a>
+          <div className="ons-section-head">
+            <p className="ons-eyebrow">Roadmap</p>
+            <h2 className="ons-h2">The ecosystem after SellerHQ.</h2>
+            <p className="ons-lead">These products are planned directions, not promises of release dates. They show the kinds of focused workflows ONSoftware is designed to support next.</p>
+          </div>
+
+          <div className="ons-roadmap">
+            {future.map((product, index) => (
+              <div className="ons-roadmap__item" key={product.slug}>
+                <span className="ons-roadmap__phase">Roadmap {index + 1}</span>
+                <div>
+                  <p className="ons-roadmap__name">{product.name}</p>
+                  <p className="ons-roadmap__text">{product.description}</p>
+                </div>
+                <span className="ons-badge ons-badge--soon">Planned</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="ons-support-notice" style={{ marginTop: '22px' }}>
+            <p><strong>Roadmap status is intentionally explicit.</strong> ONSoftware will not present unreleased tools as though they are available. Live products are labelled live; future ideas stay labelled planned until they ship.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="ons-section">
+        <div className="ons-container">
+          <Cta title="Use the product that is live now" text="SellerHQ is ONSoftware’s current flagship: a purpose-built back office for resellers, with a free Basic plan.">
+            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Create a SellerHQ account →</a>
+            <Link className="ons-btn ons-btn--outline-light ons-btn--lg" to="/products/sellerhq">See product details</Link>
           </Cta>
         </div>
       </section>

@@ -1,21 +1,20 @@
 export const SITE_NAME = 'ONSoftware'
-export const SITE_TAGLINE = 'Software built to make business simpler.'
+export const SITE_TAGLINE = 'Practical software. Less admin. More control.'
 export const SITE_DESCRIPTION =
-  'ONSoftware creates practical software designed to help independent businesses and individuals manage, organise and grow.'
+  'ONSoftware builds focused digital tools for independent businesses, sellers and people who need simpler ways to manage everyday work.'
 
-/** Canonical public origin of the hub site. */
+/** Canonical public origin of the ONSoftware hub. */
 export const SITE_URL = 'https://onsoftware.uk'
 
-/** Origin of the SellerHQ application (its own subdomain). */
+/** SellerHQ runs as its own application on the ONSoftware platform. */
 export const APP_URL = 'https://sellerhq.onsoftware.uk'
 
-/** Future central support centre origin. */
+/** Reserved origin for the central support centre. */
 export const SUPPORT_URL = 'https://support.onsoftware.uk'
 
-/** Single inbox used for all contact routes. */
+/** Current company contact inbox. */
 export const CONTACT_EMAIL = 'adminonsoftware@gmail.com'
 
-/** Email addresses for the different contact routes. */
 export const CONTACT_EMAILS = {
   general: CONTACT_EMAIL,
   support: CONTACT_EMAIL,

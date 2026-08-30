@@ -6,81 +6,49 @@ import PricingTable from '../components/PricingTable'
 import { APP_URL } from '../lib/site'
 
 const BILLING_FAQS = [
-  {
-    question: 'How does billing work?',
-    answer:
-      'Paid plans are billed monthly or annually through Stripe. You can upgrade, downgrade or cancel anytime from the billing portal inside SellerHQ.',
-  },
-  {
-    question: 'Is there an annual discount?',
-    answer:
-      'Yes — choosing annual billing saves you 5% compared to paying monthly.',
-  },
-  {
-    question: 'Are all the listed features available today?',
-    answer:
-      'Yes. SellerHQ is feature-complete — every feature shown on a plan ships with that plan. There are no “coming soon” placeholders.',
-  },
-  {
-    question: 'What happens if I cancel?',
-    answer:
-      'Your plan stays active until the end of the current billing period. After that you drop to the free Basic plan, and your data is always safe.',
-  },
-  {
-    question: 'Do I need a card to start?',
-    answer:
-      'No. The Basic plan is free and needs no card. You only enter payment details when you choose to upgrade.',
-  },
+  { question: 'Can I use SellerHQ without paying?', answer: 'Yes. Basic is a permanent free plan for up to 50 products and 1 business. No payment card is needed to create the account.' },
+  { question: 'How are paid plans billed?', answer: 'Paid plans can be billed monthly or annually through Stripe. Plan changes and cancellation are handled through the SellerHQ billing flow.' },
+  { question: 'Is there an annual discount?', answer: 'Yes. Annual billing applies a 5% discount compared with paying the same plan month by month.' },
+  { question: 'What happens if I downgrade?', answer: 'Your subscription remains active for the relevant billing period. When the lower plan takes effect, plan limits and features apply to the account while your underlying business records remain yours.' },
+  { question: 'Are the plan features shown here live?', answer: 'The pricing data on this site is intended to mirror SellerHQ’s current plan model. Where a feature depends on a particular plan, the plan list identifies that access level.' },
 ]
 
 export default function Pricing() {
   return (
     <>
-      <PageMeta
-        title={pageTitle('SellerHQ pricing')}
-        description="SellerHQ pricing — free Basic plan, plus Growing, Pro and Business plans for serious and multi-channel resellers."
-      />
+      <PageMeta title={pageTitle('SellerHQ pricing')} description="SellerHQ plans from free Basic through Growing, Pro and Business, with pricing and feature comparisons." />
 
-      <section className="ons-section">
-        <div className="ons-container">
-          <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">SellerHQ · Pricing</p>
-            <h1 className="ons-h1">Pricing that pays for itself</h1>
-            <p className="ons-lead">
-              From free to full business management — pick the plan that fits
-              how you sell, and upgrade when you’re ready.
-            </p>
-          </div>
-
-          <PricingTable />
-
-          <div className="ons-center" style={{ marginTop: '28px' }}>
-            <Link to="/products/sellerhq" className="ons-btn ons-btn--secondary">
-              ← Back to SellerHQ
-            </Link>
+      <section className="ons-hero">
+        <div className="ons-container" style={{ maxWidth: '950px' }}>
+          <p className="ons-eyebrow">SellerHQ · Pricing</p>
+          <h1 className="ons-h1">Start with the system for free. Pay when the business needs more.</h1>
+          <p className="ons-hero__lead">Every plan builds on the same SellerHQ workflow. Higher tiers increase capacity and add deeper reporting, tax, team and in-person selling tools.</p>
+          <div className="ons-hero__cta">
+            <a className="ons-btn ons-btn--primary ons-btn--lg" href={`${APP_URL}/register`}>Create free account</a>
+            <Link className="ons-btn ons-btn--secondary ons-btn--lg" to="/products/sellerhq">Back to SellerHQ</Link>
           </div>
         </div>
       </section>
 
       <section className="ons-section ons-section--soft">
         <div className="ons-container">
-          <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">Billing FAQs</p>
-            <h2 className="ons-h2">Before you sign up</h2>
-          </div>
+          <div className="ons-section-head ons-center"><p className="ons-eyebrow">Plans</p><h2 className="ons-h2">Choose by workflow and scale, not by guesswork.</h2></div>
+          <PricingTable />
+        </div>
+      </section>
+
+      <section className="ons-section">
+        <div className="ons-container">
+          <div className="ons-section-head ons-center"><p className="ons-eyebrow">Billing</p><h2 className="ons-h2">Questions before you upgrade.</h2></div>
           <Faq items={BILLING_FAQS} />
         </div>
       </section>
 
       <section className="ons-section">
         <div className="ons-container">
-          <Cta
-            title="Try SellerHQ free"
-            text="No card needed. Start with up to 50 products and see what a proper reselling back office feels like."
-          >
-            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>
-              Create your free account →
-            </a>
+          <Cta title="You do not need to choose a paid plan first" text="Create SellerHQ on Basic, put real stock into the system and upgrade only when a higher plan solves a problem you actually have.">
+            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Start on Basic →</a>
+            <Link className="ons-btn ons-btn--outline-light ons-btn--lg" to="/support">Ask a question</Link>
           </Cta>
         </div>
       </section>
