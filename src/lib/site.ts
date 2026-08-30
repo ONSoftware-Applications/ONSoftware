@@ -1,25 +1,26 @@
 export const SITE_NAME = 'ONSoftware'
-export const SITE_TAGLINE = 'Practical software. Less admin. More control.'
+export const SITE_TAGLINE = 'Tools. Automate. Succeed.'
 export const SITE_DESCRIPTION =
-  'ONSoftware builds focused digital tools for independent businesses, sellers and people who need simpler ways to manage everyday work.'
+  'ONSoftware builds focused digital tools that remove repetitive admin, organise real workflows and give independent businesses more control. Home of SellerHQ.'
 
-/** Canonical public origin of the ONSoftware hub. */
 export const SITE_URL = 'https://onsoftware.uk'
-
-/** SellerHQ runs as its own application on the ONSoftware platform. */
 export const APP_URL = 'https://sellerhq.onsoftware.uk'
 
-/** Reserved origin for the central support centre. */
-export const SUPPORT_URL = 'https://support.onsoftware.uk'
-
-/** Current company contact inbox. */
-export const CONTACT_EMAIL = 'adminonsoftware@gmail.com'
-
 export const CONTACT_EMAILS = {
-  general: CONTACT_EMAIL,
-  support: CONTACT_EMAIL,
-  business: CONTACT_EMAIL,
-  feedback: CONTACT_EMAIL,
+  admin: 'admin@onsoftware.uk',
+  business: 'business@onsoftware.uk',
+  feedback: 'feedback@onsoftware.uk',
+  general: 'general@onsoftware.uk',
+  legal: 'legal@onsoftware.uk',
+  products: 'products@onsoftware.uk',
+  support: 'products@onsoftware.uk',
+} as const
+
+export const BRAND_ASSETS = {
+  logo: '/brand/onsoftware-logo.webp',
+  mark: '/brand/onsoftware-mark.webp',
+  sellerHqLogo: '/brand/sellerhq-logo.webp',
+  sellerHqMark: '/brand/sellerhq-mark.webp',
 } as const
 
 export const COMPANY_YEAR = 2026

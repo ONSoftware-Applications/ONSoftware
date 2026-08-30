@@ -9,10 +9,7 @@ export type Plan = {
 
 export const ANNUAL_DISCOUNT = 0.05
 
-/**
- * SellerHQ pricing, kept in sync with the live app's plan data
- * (SellerHQ/src/lib/plans.ts). Monthly prices in GBP.
- */
+/** SellerHQ launch pricing, mirrored from SellerHQ/src/lib/plans.ts. */
 export const PLANS: Plan[] = [
   {
     id: 'basic',
@@ -63,7 +60,7 @@ export const PLANS: Plan[] = [
       'Everything in Growing',
       'Up to 5,000 products & 5 businesses',
       'Advanced forecasts & scenario planning',
-      'Full UK tax (quarterly deadlines, filing)',
+      'Full UK tax tools',
       'Advanced reports & stock ageing',
       'Low-stock & reorder alerts',
       'Cash-flow projection',
@@ -82,19 +79,23 @@ export const PLANS: Plan[] = [
       'Everything in Pro',
       'Unlimited products & businesses',
       '5 team seats',
-      'Business customization (logo & branding)',
+      'Business customisation (logo & branding)',
       'Full audit log',
       'Accounting export',
       'QR relay: send phone scans to a laptop',
-      'Till Mode: full point-of-sale with sessions, receipts & cash drawer',
+      'Till Mode: sessions, receipts & cash drawer',
       'White-label branding (your name, logo & colour)',
       'Priority support',
     ],
   },
 ]
 
-export function annualPerMonth(monthlyPrice: number): number {
+export function annualTotal(monthlyPrice: number): number {
   return monthlyPrice * 12 * (1 - ANNUAL_DISCOUNT)
+}
+
+export function annualMonthlyEquivalent(monthlyPrice: number): number {
+  return monthlyPrice * (1 - ANNUAL_DISCOUNT)
 }
 
 export function formatGbp(value: number): string {
