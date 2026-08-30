@@ -1,14 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import BrandMark from './BrandMark'
-import { APP_URL, COMPANY_YEAR, CONTACT_EMAILS, SITE_NAME, SITE_TAGLINE } from '../lib/site'
-import { LIVE_PRODUCTS } from '../lib/products'
+import {
+  APP_URL,
+  BRAND_ASSETS,
+  COMPANY_YEAR,
+  CONTACT_EMAILS,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from '../lib/site'
 
 const NAV_LINKS = [
   { to: '/products', label: 'Products' },
+  { to: '/updates', label: 'Updates' },
   { to: '/about', label: 'Company' },
   { to: '/support', label: 'Support' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 function ThemeToggle() {
@@ -109,6 +115,9 @@ function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <NavLink to="/contact" className="ons-nav__link" onClick={() => setMenuOpen(false)}>
+            Contact
+          </NavLink>
           <div className="ons-nav__panel-actions">
             <Link className="ons-btn ons-btn--secondary" to="/products/sellerhq" onClick={() => setMenuOpen(false)}>
               Explore SellerHQ
@@ -128,18 +137,22 @@ function Footer() {
     <footer className="ons-footer">
       <div className="ons-container">
         <div className="ons-footer__main">
-          <div>
-            <BrandMark inverted />
-            <p className="ons-footer__tagline">{SITE_TAGLINE} Focused tools for independent businesses and people who want less software friction.</p>
+          <div className="ons-footer__identity">
+            <Link to="/" aria-label="ONSoftware home">
+              <img className="ons-footer__logo" src={BRAND_ASSETS.logo} alt="ONSoftware — Tools. Automate. Succeed." />
+            </Link>
+            <p className="ons-footer__tagline">
+              {SITE_TAGLINE} Focused digital tools that reduce repetitive admin and give independent operators more control.
+            </p>
           </div>
 
           <div>
             <p className="ons-footer__col-title">Products</p>
             <ul className="ons-footer__links">
-              {LIVE_PRODUCTS.map((product) => (
-                <li key={product.slug}><Link to={product.href}>{product.name}</Link></li>
-              ))}
+              <li><Link to="/products/sellerhq">SellerHQ</Link></li>
+              <li><Link to="/products/sellerhq/pricing">SellerHQ pricing</Link></li>
               <li><Link to="/products">Product roadmap</Link></li>
+              <li><Link to="/updates">Release updates</Link></li>
             </ul>
           </div>
 
@@ -147,6 +160,7 @@ function Footer() {
             <p className="ons-footer__col-title">Company</p>
             <ul className="ons-footer__links">
               <li><Link to="/about">About ONSoftware</Link></li>
+              <li><Link to="/security">Security</Link></li>
               <li><Link to="/contact">Contact</Link></li>
               <li><Link to="/account">Product accounts</Link></li>
             </ul>
@@ -156,8 +170,8 @@ function Footer() {
             <p className="ons-footer__col-title">Support</p>
             <ul className="ons-footer__links">
               <li><Link to="/support">Help centre</Link></li>
-              <li><a href={`mailto:${CONTACT_EMAILS.support}`}>Email support</a></li>
-              <li><a href={`${APP_URL}/support`}>SellerHQ support</a></li>
+              <li><a href={`mailto:${CONTACT_EMAILS.products}`}>SellerHQ support</a></li>
+              <li><a href={`mailto:${CONTACT_EMAILS.feedback}`}>Product feedback</a></li>
             </ul>
           </div>
 
@@ -165,8 +179,8 @@ function Footer() {
             <p className="ons-footer__col-title">Legal</p>
             <ul className="ons-footer__links">
               <li><Link to="/legal/privacy">Privacy</Link></li>
-              <li><Link to="/legal/terms">Terms</Link></li>
-              <li><Link to="/legal/cookies">Cookies</Link></li>
+              <li><Link to="/legal/sellerhq-terms">SellerHQ terms</Link></li>
+              <li><Link to="/legal/subscriptions-refunds">Subscriptions & refunds</Link></li>
               <li><Link to="/legal">All legal documents</Link></li>
             </ul>
           </div>
@@ -174,7 +188,7 @@ function Footer() {
 
         <div className="ons-footer__bottom">
           <span>© {COMPANY_YEAR} {SITE_NAME}. All rights reserved.</span>
-          <span className="ons-footer__badge"><span className="ons-signal">SellerHQ live</span> · Built in the UK</span>
+          <span className="ons-footer__badge"><span className="ons-signal">SellerHQ available</span> · Built in the UK</span>
         </div>
       </div>
     </footer>

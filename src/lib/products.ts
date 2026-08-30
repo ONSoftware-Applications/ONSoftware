@@ -8,9 +8,9 @@ export type Product = {
   description: string
   status: ProductStatus
   href: string
-  /** CSS background used for the product tile monogram. */
-  accentClass?: string
   monogram: string
+  logo?: string
+  mark?: string
 }
 
 export const PRODUCTS: Product[] = [
@@ -18,48 +18,37 @@ export const PRODUCTS: Product[] = [
     slug: 'sellerhq',
     name: 'SellerHQ',
     category: 'Reselling business management',
-    tagline: 'Reselling business management',
+    tagline: 'Inventory. Organize. Grow.',
     description:
-      'Manage inventory, listings, sales, expenses and business finances in one place. Built for resellers on eBay, Vinted, Etsy and Depop.',
+      'A purpose-built back office for resellers: inventory, listings, sales, expenses, reporting, forecasting and UK tax estimates in one place.',
     status: 'live',
     href: '/products/sellerhq',
-    accentClass: 'ons-product__logo--amber',
     monogram: 'SH',
-  },
-  {
-    slug: 'coming-soon-1',
-    name: 'ONSoftware Inbox',
-    category: 'Personal admin',
-    tagline: 'Coming soon',
-    description:
-      'A practical tool for keeping personal and business correspondence organised. In early design.',
-    status: 'planned',
-    href: '/products',
-    monogram: 'OI',
-  },
-  {
-    slug: 'coming-soon-2',
-    name: 'ONSoftware Orders',
-    category: 'Order management',
-    tagline: 'Coming soon',
-    description:
-      'A lightweight order management tool for sellers and small retailers. Being scoped for a future release.',
-    status: 'planned',
-    href: '/products',
-    monogram: 'OO',
-  },
-  {
-    slug: 'coming-soon-3',
-    name: 'ONSoftware Ledger',
-    category: 'Personal & small business finance',
-    tagline: 'Coming soon',
-    description:
-      'Simple bookkeeping for sole traders and side hustles. Planned as part of the ONSoftware ecosystem.',
-    status: 'planned',
-    href: '/products',
-    monogram: 'OL',
+    logo: '/brand/sellerhq-logo.webp',
+    mark: '/brand/sellerhq-mark.webp',
   },
 ]
+
+export const PRODUCT_ROADMAP = [
+  {
+    phase: 'Now',
+    title: 'Launch and harden SellerHQ',
+    description:
+      'Focus on reliability, onboarding, support, billing clarity and feedback from real resellers after launch.',
+  },
+  {
+    phase: 'Next',
+    title: 'Improve the ONSoftware platform around the product',
+    description:
+      'Strengthen documentation, product support, release notes and shared company infrastructure without forcing SellerHQ into an oversized suite.',
+  },
+  {
+    phase: 'Later',
+    title: 'Add the next product only when it earns its place',
+    description:
+      'Future ONSoftware products will be announced when they enter genuine development. We do not publish placeholder product names as if they already exist.',
+  },
+] as const
 
 export function getProduct(slug: string): Product | undefined {
   return PRODUCTS.find((product) => product.slug === slug)
