@@ -76,10 +76,10 @@ export default function Support() {
           <div>
             <div className="ons-pill"><span /> Security</div>
             <h2>Found a security issue?</h2>
-            <p>Send a clear reproduction to the product/support address. Do not access, alter or retain data that is not yours, and do not use a vulnerability to disrupt the service.</p>
+            <p>Send a clear, private reproduction to the security contact. Do not access, alter or retain data that is not yours, and do not use a vulnerability to disrupt the service.</p>
           </div>
           <div className="ons-security-panel__actions">
-            <a className="ons-btn ons-btn--primary" href={`mailto:${CONTACT_EMAILS.products}?subject=Security%20report`}>Report a security issue</a>
+            <a className="ons-btn ons-btn--primary" href={`mailto:${CONTACT_EMAILS.admin}?subject=Security%20report`}>Report a security issue</a>
             <Link className="ons-text-link" to="/legal/security">Read security information →</Link>
           </div>
         </div>
