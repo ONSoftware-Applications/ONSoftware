@@ -1,7 +1,7 @@
 export const SITE_NAME = 'ONSoftware'
 export const SITE_TAGLINE = 'Tools. Automate. Succeed.'
 export const SITE_DESCRIPTION =
-  'ONSoftware builds focused digital tools that remove repetitive admin, organise real workflows and give independent businesses more control. Home of SellerHQ.'
+  'ONSoftware is an independent UK software studio building focused tools for the operational work behind small businesses. Home of SellerHQ.'
 
 export const SITE_URL = 'https://onsoftware.uk'
 export const APP_URL = 'https://sellerhq.onsoftware.uk'
