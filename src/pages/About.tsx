@@ -1,26 +1,12 @@
 import { Link } from 'react-router-dom'
 import PageMeta, { pageTitle } from '../components/PageMeta'
-import Cta from '../components/Cta'
-import { BRAND_ASSETS, CONTACT_EMAILS, SITE_TAGLINE } from '../lib/site'
-import { PRODUCT_ROADMAP } from '../lib/products'
+import { BRAND_ASSETS, CONTACT_EMAILS } from '../lib/site'
+import { UPDATES } from '../lib/updates'
 
-const VALUES = [
-  {
-    title: 'Solve the operational problem first',
-    text: 'A product starts with a workflow that is repetitive, fragmented or unnecessarily difficult. Features come after the problem is understood.',
-  },
-  {
-    title: 'Keep ownership clear',
-    text: 'ONSoftware is the company hub; products such as SellerHQ own their application accounts, product terms and operational experience.',
-  },
-  {
-    title: 'Make data useful and portable',
-    text: 'Business records should help the user make decisions and should not be deliberately trapped inside a product.',
-  },
-  {
-    title: 'Say what exists',
-    text: 'We would rather show one real product than invent a portfolio of names for software that has not entered genuine development.',
-  },
+const APPROACH = [
+  ['Start with the job', 'We look for a workflow that is repetitive, fragmented or unnecessarily hard before deciding what software should exist.'],
+  ['Keep the product focused', 'A useful tool does not need to become an all-purpose platform. Features should strengthen the main job, not dilute it.'],
+  ['Make the system legible', 'Automation is valuable when users can still understand their records, export their data and see what the software is doing.'],
 ]
 
 export default function About() {
@@ -28,86 +14,84 @@ export default function About() {
     <>
       <PageMeta
         title={pageTitle('About')}
-        description="About ONSoftware — a UK software studio building focused digital tools around real operational problems."
+        description="ONSoftware is an independent UK software studio building focused operational tools, beginning with SellerHQ."
       />
 
-      <section className="ons-page-hero">
-        <div className="ons-container ons-about-hero">
+      <section className="ons-page-hero ons-page-hero--dark">
+        <div className="ons-container ons-about-intro">
           <div>
-            <p className="ons-eyebrow">About ONSoftware</p>
-            <h1 className="ons-h1">{SITE_TAGLINE}</h1>
-            <p className="ons-lead">ONSoftware builds software for the work people already have to do. The aim is not to add another dashboard; it is to reduce the fragmented admin around a real workflow and make the underlying information more useful.</p>
+            <div className="ons-pill ons-pill--dark"><span /> About ONSoftware</div>
+            <h1>A small software studio with a deliberately narrow brief.</h1>
+            <p>Build tools that remove real operational friction. Make them clear enough to trust. Do not create complexity just to look like a bigger company.</p>
           </div>
-          <img className="ons-about-logo" src={BRAND_ASSETS.logo} alt="ONSoftware — Tools. Automate. Succeed." />
-        </div>
-      </section>
-
-      <section className="ons-section ons-section--soft">
-        <div className="ons-container ons-showcase">
-          <div className="ons-showcase__copy">
-            <p className="ons-eyebrow">The first product</p>
-            <h2 className="ons-h2">SellerHQ started with a familiar problem: reselling businesses outgrow the tools they began with.</h2>
-          </div>
-          <div className="ons-prose">
-            <p>Marketplaces handle transactions, but sellers still need to organise stock, purchase costs, listing status, fees, shipping, expenses, receipts, profit, forecasting and tax records. SellerHQ is ONSoftware’s first attempt to solve that operational layer as one coherent product.</p>
-            <p><Link to="/products/sellerhq">Explore SellerHQ</Link> to see how that product is structured.</p>
+          <div className="ons-about-intro__logo">
+            <img src={BRAND_ASSETS.logo} alt="ONSoftware — Tools. Automate. Succeed." />
           </div>
         </div>
       </section>
 
       <section className="ons-section">
-        <div className="ons-container">
-          <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">How we work</p>
-            <h2 className="ons-h2">A product company should be clear about what is real.</h2>
+        <div className="ons-container ons-two-col-story">
+          <div className="ons-heading-block ons-heading-block--left">
+            <div className="ons-pill"><span /> What we build</div>
+            <h2>Software around the work people already have to do.</h2>
           </div>
-          <div className="ons-feature-grid">
-            {VALUES.map((value) => (
-              <article className="ons-card" key={value.title}>
-                <h3 className="ons-card__title ons-h3">{value.title}</h3>
-                <p className="ons-card__text">{value.text}</p>
+          <div className="ons-prose ons-prose--large">
+            <p>ONSoftware is not trying to create a giant suite of unrelated apps. The company exists to build focused products around workflows where information gets duplicated, calculations are repeated and the tools people start with eventually become the problem.</p>
+            <p>SellerHQ is the first example: a back office for resellers who have outgrown scattered marketplace dashboards, spreadsheets and notes.</p>
+            <Link className="ons-text-link" to="/products/sellerhq">Explore SellerHQ →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="ons-section ons-section--paper">
+        <div className="ons-container">
+          <div className="ons-heading-block">
+            <div className="ons-pill"><span /> Product principles</div>
+            <h2>Three rules keep the company honest.</h2>
+          </div>
+          <div className="ons-principle-grid">
+            {APPROACH.map(([title, text], index) => (
+              <article className="ons-principle" key={title}>
+                <span className="ons-principle__number">0{index + 1}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="ons-section ons-section--soft">
-        <div className="ons-container">
-          <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">Roadmap</p>
-            <h2 className="ons-h2">The company grows after the product earns it.</h2>
+      <section className="ons-section" id="updates">
+        <div className="ons-container ons-updates-layout">
+          <div className="ons-heading-block ons-heading-block--left">
+            <div className="ons-pill"><span /> Product updates</div>
+            <h2>What changed recently.</h2>
+            <p>Updates live here rather than on a separate company-news page. If there is nothing meaningful to say, we do not manufacture an announcement.</p>
           </div>
-          <div className="ons-roadmap">
-            {PRODUCT_ROADMAP.map((item) => (
-              <article className="ons-roadmap__item" key={item.phase}>
-                <span className="ons-roadmap__phase">{item.phase}</span>
-                <h3 className="ons-h3">{item.title}</h3>
-                <p>{item.description}</p>
+          <div className="ons-update-list">
+            {UPDATES.slice(0, 4).map((update) => (
+              <article key={`${update.date}-${update.title}`}>
+                <span>{update.date}</span>
+                <div><strong>{update.title}</strong><p>{update.summary}</p></div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="ons-section">
-        <div className="ons-container ons-split-panel">
+      <section className="ons-section ons-section--paper">
+        <div className="ons-container ons-contact-band">
           <div>
-            <p className="ons-eyebrow">Talk to ONSoftware</p>
-            <h2 className="ons-h2">Different enquiries should reach the right inbox.</h2>
+            <div className="ons-pill"><span /> Talk to us</div>
+            <h2>Use the inbox that matches the reason.</h2>
+            <p>That keeps product support separate from partnerships, legal requests and general company questions.</p>
           </div>
-          <div className="ons-prose">
-            <p>Business and partnership enquiries can go to <a href={`mailto:${CONTACT_EMAILS.business}`}>{CONTACT_EMAILS.business}</a>. Product ideas and experience feedback can go to <a href={`mailto:${CONTACT_EMAILS.feedback}`}>{CONTACT_EMAILS.feedback}</a>.</p>
-            <Link className="ons-btn ons-btn--secondary" to="/contact">See all contact routes</Link>
+          <div className="ons-contact-links">
+            <a href={`mailto:${CONTACT_EMAILS.business}`}><span>Business</span><strong>{CONTACT_EMAILS.business}</strong></a>
+            <a href={`mailto:${CONTACT_EMAILS.feedback}`}><span>Product feedback</span><strong>{CONTACT_EMAILS.feedback}</strong></a>
+            <a href={`mailto:${CONTACT_EMAILS.general}`}><span>General</span><strong>{CONTACT_EMAILS.general}</strong></a>
           </div>
-        </div>
-      </section>
-
-      <section className="ons-section">
-        <div className="ons-container">
-          <Cta title="See the product that is live now" text="SellerHQ is the first ONSoftware application and is available with a free Basic plan.">
-            <Link className="ons-btn ons-btn--light ons-btn--lg" to="/products/sellerhq">Explore SellerHQ →</Link>
-          </Cta>
         </div>
       </section>
     </>
