@@ -38,15 +38,15 @@ export const PRODUCT_ROADMAP = [
   },
   {
     phase: 'Next',
-    title: 'Improve the ONSoftware platform around the product',
+    title: 'Deepen the SellerHQ workflow',
     description:
-      'Strengthen documentation, product support, release notes and shared company infrastructure without forcing SellerHQ into an oversized suite.',
+      'Improve the everyday path from stock intake through listings, sales, reporting and higher-volume operations based on real usage.',
   },
   {
     phase: 'Later',
-    title: 'Add the next product only when it earns its place',
+    title: 'Expand into additional operational tools',
     description:
-      'Future ONSoftware products will be announced when they enter genuine development. We do not publish placeholder product names as if they already exist.',
+      'Use what ONSoftware learns from building and supporting SellerHQ to identify other repetitive business workflows worth solving.',
   },
 ] as const
 
