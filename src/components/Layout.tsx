@@ -71,6 +71,7 @@ function Navbar() {
               <li key={link.to}>
                 <NavLink
                   to={link.to}
+                  end
                   className={({ isActive }) =>
                     isActive ? 'ons-nav__link ons-nav__link--active' : 'ons-nav__link'
                   }
@@ -110,13 +111,14 @@ function Navbar() {
             <NavLink
               key={link.to}
               to={link.to}
+              end
               className="ons-nav__link"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </NavLink>
           ))}
-          <NavLink to="/contact" className="ons-nav__link" onClick={() => setMenuOpen(false)}>
+          <NavLink to="/contact" end className="ons-nav__link" onClick={() => setMenuOpen(false)}>
             Contact
           </NavLink>
           <div className="ons-nav__panel-actions">
