@@ -11,9 +11,10 @@ import {
 } from '../lib/site'
 
 const NAV_LINKS = [
-  { to: '/products', label: 'Products' },
+  { to: '/products/sellerhq', label: 'SellerHQ' },
+  { to: '/products/sellerhq/pricing', label: 'Pricing' },
   { to: '/updates', label: 'Updates' },
-  { to: '/about', label: 'Company' },
+  { to: '/about', label: 'About' },
   { to: '/support', label: 'Support' },
 ]
 
@@ -83,9 +84,9 @@ function Navbar() {
 
         <div className="ons-nav__actions">
           <ThemeToggle />
-          <Link className="ons-btn ons-btn--ghost ons-btn--sm" to="/products/sellerhq">
-            SellerHQ
-          </Link>
+          <a className="ons-btn ons-btn--ghost ons-btn--sm" href={`${APP_URL}/register`}>
+            Start free
+          </a>
           <a className="ons-btn ons-btn--primary ons-btn--sm" href={`${APP_URL}/login`}>
             Open app
           </a>
@@ -119,9 +120,9 @@ function Navbar() {
             Contact
           </NavLink>
           <div className="ons-nav__panel-actions">
-            <Link className="ons-btn ons-btn--secondary" to="/products/sellerhq" onClick={() => setMenuOpen(false)}>
-              Explore SellerHQ
-            </Link>
+            <a className="ons-btn ons-btn--secondary" href={`${APP_URL}/register`}>
+              Start free on Basic
+            </a>
             <a className="ons-btn ons-btn--primary" href={`${APP_URL}/login`}>
               Open SellerHQ
             </a>
@@ -151,7 +152,7 @@ function Footer() {
             <ul className="ons-footer__links">
               <li><Link to="/products/sellerhq">SellerHQ</Link></li>
               <li><Link to="/products/sellerhq/pricing">SellerHQ pricing</Link></li>
-              <li><Link to="/products">Product roadmap</Link></li>
+              <li><Link to="/products">ONSoftware products</Link></li>
               <li><Link to="/updates">Release updates</Link></li>
             </ul>
           </div>
