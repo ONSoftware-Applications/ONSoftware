@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'Is SellerHQ free?',
     answer:
-      'Yes. Basic costs £0 and supports up to 50 products and one business. Growing, Pro and Business increase limits and add progressively deeper workflows.',
+      'Yes. Every new account starts on Basic, which costs £0 and supports up to 50 products and one business. If you later need more capacity or features, upgrade from the Billing area inside SellerHQ.',
   },
   {
     question: 'Does SellerHQ connect directly to eBay, Vinted, Etsy or Depop?',
@@ -85,6 +85,7 @@ export default function SellerHQ() {
       <PageMeta
         title={pageTitle('SellerHQ')}
         description="SellerHQ by ONSoftware is a reselling back office for inventory, listings, sales, expenses, reporting, forecasting and UK tax estimates."
+        image={BRAND_ASSETS.sellerHqOg}
       />
 
       <section className="ons-hero ons-hero--dark ons-seller-hero">
@@ -96,14 +97,14 @@ export default function SellerHQ() {
               SellerHQ is the back office for resellers who need more than a marketplace account and less than an enterprise system. Track the stock, money and admin behind every listing from one product record.
             </p>
             <div className="ons-hero__cta">
-              <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Create a free account →</a>
+              <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Start free on Basic →</a>
               <a className="ons-btn ons-btn--outline-light ons-btn--lg" href={`${APP_URL}/login`}>Open SellerHQ</a>
               <Link className="ons-btn ons-btn--outline-light ons-btn--lg" to="/products/sellerhq/pricing">Compare plans</Link>
             </div>
             <div className="ons-hero__proof">
               <span className="ons-signal">Available now</span>
-              <span>Basic: £0</span>
-              <span>No card required to start</span>
+              <span>Every account starts on Basic</span>
+              <span>No card required</span>
             </div>
           </div>
           <div className="ons-product-brand-stage ons-product-brand-stage--dark">
@@ -158,14 +159,18 @@ export default function SellerHQ() {
 
       <section className="ons-section ons-section--soft">
         <div className="ons-container">
+          <div className="ons-support-notice" style={{ marginBottom: 34 }}>
+            <strong>Basic is the starting point for everyone.</strong>
+            <p>Create the account for free first. Growing, Pro and Business are upgrades made from the Billing area inside SellerHQ.</p>
+          </div>
           <div className="ons-section-head ons-center">
             <p className="ons-eyebrow">Pricing</p>
             <h2 className="ons-h2">Start free. Upgrade for capacity and deeper operations.</h2>
-            <p className="ons-lead">Current launch pricing is shown below. Checkout is the final source of truth for the price and billing cycle you choose.</p>
+            <p className="ons-lead">The higher plans show what becomes available as your stock volume, reporting needs or team grows.</p>
           </div>
           <PricingTable />
           <div className="ons-center" style={{ marginTop: 28 }}>
-            <Link className="ons-btn ons-btn--secondary" to="/products/sellerhq/pricing">Full plan and billing details →</Link>
+            <Link className="ons-btn ons-btn--secondary" to="/products/sellerhq/pricing">Full billing details →</Link>
           </div>
         </div>
       </section>
@@ -212,9 +217,9 @@ export default function SellerHQ() {
         <div className="ons-container">
           <Cta
             title="Give the business behind the listings a proper system."
-            text="Create a SellerHQ Basic account for free, add your first stock and upgrade only when you need more capacity or deeper tools."
+            text="Create SellerHQ on Basic for free, add your first stock and upgrade from inside the app only when you need more capacity or deeper tools."
           >
-            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Start free →</a>
+            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Start free on Basic →</a>
             <Link className="ons-btn ons-btn--outline-light ons-btn--lg" to="/support">Get product support</Link>
           </Cta>
         </div>

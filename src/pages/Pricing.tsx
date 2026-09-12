@@ -3,16 +3,20 @@ import PageMeta, { pageTitle } from '../components/PageMeta'
 import Cta from '../components/Cta'
 import Faq from '../components/Faq'
 import PricingTable from '../components/PricingTable'
-import { APP_URL } from '../lib/site'
+import { APP_URL, BRAND_ASSETS } from '../lib/site'
 
 const BILLING_FAQS = [
   {
     question: 'Can I use SellerHQ without paying?',
-    answer: 'Yes. Basic is a free plan for up to 50 products and one business. No payment card is needed to create the account.',
+    answer: 'Yes. Every new SellerHQ account starts on Basic, which is free for up to 50 products and one business. No payment card is needed to create the account.',
+  },
+  {
+    question: 'How do I move to a paid plan?',
+    answer: 'Create your SellerHQ account on Basic first. If you later need a higher plan, upgrade from the Billing area inside SellerHQ. Paid plans are not selected during registration.',
   },
   {
     question: 'How are paid plans billed?',
-    answer: 'Growing, Pro and Business can be billed monthly or annually through Stripe. The checkout and billing portal show the amount and renewal cycle before you commit.',
+    answer: 'Growing, Pro and Business can be billed monthly or annually through Stripe. The in-app upgrade flow and Stripe checkout show the amount and renewal cycle before you commit.',
   },
   {
     question: 'Is there an annual discount?',
@@ -37,16 +41,17 @@ export default function Pricing() {
     <>
       <PageMeta
         title={pageTitle('SellerHQ pricing')}
-        description="SellerHQ launch pricing: Basic free, Growing £5.99/month, Pro £10.99/month and Business £15.99/month, with 5% annual savings."
+        description="SellerHQ pricing: every account starts on free Basic, with Growing, Pro and Business upgrades available from inside SellerHQ."
+        image={BRAND_ASSETS.sellerHqOg}
       />
 
       <section className="ons-page-hero">
         <div className="ons-container">
           <p className="ons-eyebrow">SellerHQ · Pricing</p>
-          <h1 className="ons-h1">Start free. Pay when a higher plan solves a real constraint.</h1>
+          <h1 className="ons-h1">Start on Basic. Upgrade inside SellerHQ when you need more.</h1>
           <p className="ons-lead">Basic covers the core inventory and business-record workflow. Growing, Pro and Business increase capacity and add deeper listings, reporting, forecasting, tax, team and in-person selling tools.</p>
           <div className="ons-hero__cta">
-            <a className="ons-btn ons-btn--primary ons-btn--lg" href={`${APP_URL}/register`}>Create free account</a>
+            <a className="ons-btn ons-btn--primary ons-btn--lg" href={`${APP_URL}/register`}>Start free on Basic</a>
             <Link className="ons-btn ons-btn--secondary ons-btn--lg" to="/products/sellerhq">Back to SellerHQ</Link>
           </div>
         </div>
@@ -54,10 +59,14 @@ export default function Pricing() {
 
       <section className="ons-section ons-section--soft">
         <div className="ons-container">
+          <div className="ons-support-notice" style={{ marginBottom: 34 }}>
+            <strong>All new accounts begin on Basic.</strong>
+            <p>Paid plans are upgrades from the Billing area inside SellerHQ. Registration never places you directly onto Growing, Pro or Business.</p>
+          </div>
           <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">Launch plans</p>
-            <h2 className="ons-h2">Four plans, one underlying workflow.</h2>
-            <p className="ons-lead">Prices below are the current launch prices mirrored from SellerHQ. The amount shown by Stripe at checkout is the final price for the purchase you make.</p>
+            <p className="ons-eyebrow">Plans</p>
+            <h2 className="ons-h2">Four levels, one underlying workflow.</h2>
+            <p className="ons-lead">Use Basic first. The higher plans show what becomes available if your stock volume, reporting needs or team grows.</p>
           </div>
           <PricingTable />
         </div>
@@ -87,9 +96,9 @@ export default function Pricing() {
         <div className="ons-container">
           <Cta
             title="You do not need to choose a paid plan first"
-            text="Create SellerHQ on Basic, put real stock into the system and upgrade only when a higher plan solves a problem you actually have."
+            text="Create SellerHQ on Basic, put real stock into the system and upgrade from inside the app only when a higher plan solves a problem you actually have."
           >
-            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Start on Basic →</a>
+            <a className="ons-btn ons-btn--light ons-btn--lg" href={`${APP_URL}/register`}>Start free on Basic →</a>
             <Link className="ons-btn ons-btn--outline-light ons-btn--lg" to="/support">Ask a product question</Link>
           </Cta>
         </div>

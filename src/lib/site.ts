@@ -21,6 +21,7 @@ export const BRAND_ASSETS = {
   mark: '/brand/onsoftware-mark.webp',
   sellerHqLogo: '/brand/sellerhq-logo.webp',
   sellerHqMark: '/brand/sellerhq-mark.webp',
+  sellerHqOg: '/brand/sellerhq-logo.webp',
 } as const
 
 export const COMPANY_YEAR = 2026

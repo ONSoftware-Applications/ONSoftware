@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { SITE_NAME, SITE_URL } from '../lib/site'
+import { BRAND_ASSETS, SITE_NAME, SITE_URL } from '../lib/site'
 
 type PageMetaProps = {
   title: string
   description: string
+  image?: string
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -17,10 +18,17 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   meta.setAttribute('content', content)
 }
 
-export default function PageMeta({ title, description }: PageMetaProps) {
+function absoluteAssetUrl(asset: string): string {
+  if (asset.startsWith('http://') || asset.startsWith('https://')) return asset
+  return `${SITE_URL}${asset.startsWith('/') ? asset : `/${asset}`}`
+}
+
+export default function PageMeta({ title, description, image = BRAND_ASSETS.logo }: PageMetaProps) {
   const { pathname } = useLocation()
 
   useEffect(() => {
+    const imageUrl = absoluteAssetUrl(image)
+
     document.title = title
 
     upsertMeta('name', 'description', description)
@@ -28,9 +36,12 @@ export default function PageMeta({ title, description }: PageMetaProps) {
     upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:type', 'website')
     upsertMeta('property', 'og:url', `${SITE_URL}${pathname}`)
+    upsertMeta('property', 'og:image', imageUrl)
+    upsertMeta('property', 'og:image:alt', title)
     upsertMeta('name', 'twitter:card', 'summary_large_image')
     upsertMeta('name', 'twitter:title', title)
     upsertMeta('name', 'twitter:description', description)
+    upsertMeta('name', 'twitter:image', imageUrl)
 
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
     if (!canonical) {
@@ -39,7 +50,7 @@ export default function PageMeta({ title, description }: PageMetaProps) {
       document.head.appendChild(canonical)
     }
     canonical.setAttribute('href', `${SITE_URL}${pathname}`)
-  }, [title, description, pathname])
+  }, [title, description, image, pathname])
 
   return null
 }

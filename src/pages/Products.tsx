@@ -10,15 +10,15 @@ export default function Products() {
     <>
       <PageMeta
         title={pageTitle('Products')}
-        description="Explore ONSoftware products. SellerHQ is available now; future products are announced only when they enter genuine development."
+        description="Explore ONSoftware products. SellerHQ is available now, with future tools added as ONSoftware expands into new operational workflows."
       />
 
       <section className="ons-page-hero">
         <div className="ons-container">
           <p className="ons-eyebrow">ONSoftware products</p>
-          <h1 className="ons-h1">Focused products, not a catalogue of promises.</h1>
+          <h1 className="ons-h1">Software built around specific operational jobs.</h1>
           <p className="ons-lead">
-            ONSoftware exists to build practical software around specific operational problems. SellerHQ is the first product. The roadmap below explains where the company is going without inventing public product names before the work is real.
+            ONSoftware builds focused tools for repetitive, fragmented work. SellerHQ is available now for resellers, and this page will grow as new products move from development into real use.
           </p>
         </div>
       </section>
@@ -38,9 +38,9 @@ export default function Products() {
       <section className="ons-section">
         <div className="ons-container">
           <div className="ons-section-head ons-center">
-            <p className="ons-eyebrow">Company roadmap</p>
-            <h2 className="ons-h2">The next priority is making the first product excellent.</h2>
-            <p className="ons-lead">Product names will be published when they have a real scope, build and reason to exist.</p>
+            <p className="ons-eyebrow">Current roadmap</p>
+            <h2 className="ons-h2">Make the live product better, then expand the product family.</h2>
+            <p className="ons-lead">Current work is centred on SellerHQ reliability, workflow depth and learning from real use before ONSoftware broadens into additional operational tools.</p>
           </div>
           <div className="ons-roadmap">
             {PRODUCT_ROADMAP.map((item) => (
@@ -57,11 +57,11 @@ export default function Products() {
       <section className="ons-section ons-section--soft">
         <div className="ons-container ons-split-panel">
           <div>
-            <p className="ons-eyebrow">Have a product problem worth solving?</p>
-            <h2 className="ons-h2">We want problems, not feature wish-lists.</h2>
+            <p className="ons-eyebrow">Product feedback</p>
+            <h2 className="ons-h2">Tell us where the workflow breaks down.</h2>
           </div>
           <div>
-            <p className="ons-lead">If a repetitive business workflow is expensive, confusing or still held together with spreadsheets, tell us what actually happens today.</p>
+            <p className="ons-lead">If repetitive business work is expensive, confusing or still held together with spreadsheets, tell us what happens today and where the friction is.</p>
             <a className="ons-btn ons-btn--secondary" href={`mailto:${CONTACT_EMAILS.feedback}`}>Send product feedback</a>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function Products() {
 
       <section className="ons-section">
         <div className="ons-container">
-          <Cta title="Start with SellerHQ" text="The first ONSoftware product is available now with a free Basic plan.">
+          <Cta title="Start with SellerHQ" text="SellerHQ is available now, and every new account begins on the free Basic plan.">
             <Link className="ons-btn ons-btn--light ons-btn--lg" to="/products/sellerhq">Explore SellerHQ →</Link>
           </Cta>
         </div>
