@@ -1,5 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/products/sellerhq", "destination": "/products/sellerhq/index.html" },
+    { "source": "/products/sellerhq/pricing", "destination": "/products/sellerhq/pricing/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
