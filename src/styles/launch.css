@@ -131,6 +131,8 @@
 
 .ons-roadmap__item {
   position: relative;
+  display: block;
+  min-width: 0;
   padding: 30px;
   border: 1px solid var(--ons-line);
   border-radius: var(--ons-radius-lg);
